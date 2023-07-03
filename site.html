@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Shopping Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .products-container {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product span {
+            display: block;
+        }
+
+        .company-name,
+        .model-number,
+        .from-city,
+        .to-city,
+        .product-category {
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            width: 200px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .cart h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Shop Now</h1>
+
+    <div class="products-container">
+        <div class="product" id="1">
+            <span class="company-name">Camlin</span>
+            <span class="model-number">123</span>
+            <span class="from-city">Mumbai</span>
+            <span class="to-city">Ghaziabad</span>
+            <span class="product-category">Stationary</span>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" id="2">
+            <span class="company-name">Fila</span>
+            <span class="model-number">456</span>
+            <span class="from-city">Lucknow</span>
+            <span class="to-city">Surat</span>
+            <span class="product-category">Sports</span>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" id="3">
+            <span class="company-name">Reebok</span>
+            <span class="model-number">789</span>
+            <span class="from-city">Kolkata</span>
+            <span class="to-city">Hyderabad</span>
+            <span class="product-category">Sports</span>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" id="4">
+            <span class="company-name">Zara</span>
+            <span class="model-number">1011</span>
+            <span class="from-city">Pune</span>
+            <span class="to-city">Delhi</span>
+            <span class="product-category">CLothing</span>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product" id="5">
+            <span class="company-name">H&M</span>
+            <span class="model-number">1012</span>
+            <span class="from-city">Indore</span>
+            <span class="to-city">Vadodra</span>
+            <span class="product-category">Clothing</span>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>Cart</h3>
+        <ul class="cart-items"></ul>
+    </div>
+
+    <script>
+        // Function to extract product data
+        function extractProductData() {
+            const productElements = document.querySelectorAll('.product');
+
+            const products = [];
+
+            productElements.forEach((element) => {
+                const companyName = element.querySelector('.company-name').textContent;
+                const modelNumber = element.querySelector('.model-number').textContent;
+                const fromCity = element.querySelector('.from-city').textContent;
+                const toCity = element.querySelector('.to-city').textContent;
+                const productCategory = element.querySelector('.product-category').textContent;
+
+                const product = {
+                    companyName,
+                    modelNumber,
+                    fromCity,
+                    toCity,
+                    productCategory
+                };
+
+                products.push(product);
+            });
+
+            return products;
+        }
+
+        // Function to handle adding to cart
+        function addToCart(event) {
+            const productElement = event.target.closest('.product');
+            const companyName = productElement.querySelector('.company-name').textContent;
+            const modelNumber = productElement.querySelector('.model-number').textContent;
+
+            const cartItem = document.createElement('li');
+            cartItem.textContent = `${companyName} - ${modelNumber}`;
+
+            const cartItems = document.querySelector('.cart-items');
+            cartItems.appendChild(cartItem);
+        }
+
+        // Main execution logic
+        function main() {
+            // Extract product data from the webpage
+            const products = extractProductData();
+
+            // Add event listeners to the "Add to Cart" buttons
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach((button) => {
+                button.addEventListener('click', addToCart);
+            });
+        }
+
+        // Execute the content script when the DOM is ready
+        window.addEventListener('DOMContentLoaded', main);
+    </script>
+</body>
+
+</html>
