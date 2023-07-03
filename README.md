@@ -1,4 +1,6 @@
-# Model Refining
+(Chrome extension in other branch)
+
+## Model Refining
 
 This repository contains code for refining a machine learning model to predict emission footprints based on various features. The model is trained using the TensorFlow framework and can be used to make predictions on new data.
 
@@ -37,8 +39,7 @@ This project provides a basic framework for refining and deploying a machine lea
 This repository contains a Flask app that uses a trained machine learning model to predict CO2 emissions based on input data. The app provides an API endpoint that accepts JSON data and returns the predicted emissions.
 
 ## Endpoint and Functionality
-
-- Endpoint: `/predict`
+API link of model:http://co2emsission.pythonanywhere.com/predict
 - Method: POST
 - Input: JSON data with an array of objects containing the following fields: `product_catetgory`, `from_city`, `to_city`, `Company`.
 - Output: JSON response with an array of predicted emissions, each containing a description and an emission value.
