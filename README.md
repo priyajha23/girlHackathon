@@ -1,4 +1,4 @@
-Dummy Site
+## Dummy site
 
 This is the site, the extension is tested on.
 
