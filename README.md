@@ -25,7 +25,8 @@ This is a browser extension that provides sustainability ratings for products on
 
 ![Extension popup](images/extensionPopup.png)
 
-
+Please note that the extension is currently limited to the dummy website (https://lucky-gumdrop-70ee17.netlify.app/) for security and testing purposes. However, the extension's functionality can be easily expanded to support other websites as the ML model works on any sites data.
+The code for the dummy site has been included in another branch.
 
 
 
