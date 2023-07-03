@@ -1,4 +1,4 @@
-(Chrome extension in other branch)
+## (Chrome extension in other branch)
 
 ## Model Refining
 
