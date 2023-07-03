@@ -14,7 +14,7 @@ This is a browser extension that provides sustainability ratings for products on
 5. Click on "Load unpacked" and select the extracted extension folder.
 6. The extension should now be installed and ready to use.
 
-
+![Loaded extension](images/extensionLoad.png)
 
 
 
