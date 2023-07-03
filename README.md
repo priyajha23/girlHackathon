@@ -1,4 +1,4 @@
-## (Chrome extension in other branch)
+## (Chrome extension is in other branch)
 
 # ML-model
 
