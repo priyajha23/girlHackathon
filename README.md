@@ -6,12 +6,12 @@ This is a browser extension that provides sustainability ratings for products on
 
 ## Installation
 
-1. Download the extension package from the [extension repository](https://example.com/extension-package.zip).
+1. Download the extension package(sustainify folder) from the chrome-extension branch.
 2. Extract the contents of the package to a local directory.
 3. Open your browser and navigate to the extension management page:
    - For Google Chrome: Go to `chrome://extensions/`
 4. Enable the "Developer mode" option if not already enabled.
-5. Click on "Load unpacked" or "Load extension" (depending on your browser) and select the extracted extension folder.
+5. Click on "Load unpacked" and select the extracted extension folder.
 6. The extension should now be installed and ready to use.
 
 
