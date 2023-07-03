@@ -1,4 +1,4 @@
-# girlHackathon
+#Dummy Site
 
 This is the site, the extension is tested on.
 
