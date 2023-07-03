@@ -1,29 +1,54 @@
-// You can add any necessary JavaScript functionality here
-// such as incrementing/decrementing the quantity or handling the "Add to Cart" button click event.
-// This code is just a sample to show the structure and basic functionality.
+// Function to extract product data
+ function extractProductData() {
+    const productElements = document.querySelectorAll('.product');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const minusButtons = document.querySelectorAll('.minus-btn');
-    const plusButtons = document.querySelectorAll('.plus-btn');
-  
-    minusButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const quantityInput = this.parentNode.querySelector('input[type="text"]');
-        let quantity = parseInt(quantityInput.value);
-        if (quantity > 1) {
-          quantity--;
-          quantityInput.value = quantity;
-        }
-      });
+    const products = [];
+
+    productElements.forEach((element) => {
+        const companyName = element.querySelector('.company-name').textContent;
+        const modelNumber = element.querySelector('.model-number').textContent;
+        const fromCity = element.querySelector('.from-city').textContent;
+        const toCity = element.querySelector('.to-city').textContent;
+        const productCategory = element.querySelector('.product-category').textContent;
+
+        const product = {
+            companyName,
+            modelNumber,
+            fromCity,
+            toCity,
+            productCategory
+        };
+
+        products.push(product);
     });
-  
-    plusButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const quantityInput = this.parentNode.querySelector('input[type="text"]');
-        let quantity = parseInt(quantityInput.value);
-        quantity++;
-        quantityInput.value = quantity;
-      });
+
+    return products;
+}
+
+// Function to handle adding to cart
+function addToCart(event) {
+    const productElement = event.target.closest('.product');
+    const companyName = productElement.querySelector('.company-name').textContent;
+    const modelNumber = productElement.querySelector('.model-number').textContent;
+
+    const cartItem = document.createElement('li');
+    cartItem.textContent = `${companyName} - ${modelNumber}`;
+
+    const cartItems = document.querySelector('.cart-items');
+    cartItems.appendChild(cartItem);
+}
+
+// Main execution logic
+function main() {
+    // Extract product data from the webpage
+    const products = extractProductData();
+
+    // Add event listeners to the "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach((button) => {
+        button.addEventListener('click', addToCart);
     });
-  });
-  
+}
+
+// Execute the content script when the DOM is ready
+window.addEventListener('DOMContentLoaded', main);
