@@ -22,6 +22,7 @@ This is a browser extension that provides sustainability ratings for products on
 2. The extension will automatically display the sustainability ratings for each product, indicating their environmental impact.
 3. Interact with the products as usual, and the extension will keep updating the sustainability ratings.
 4. Click on the extension's toolbar icon to view green points acquired.
+
 ![Extension popup](images/extensionPopup.png)
 
 
