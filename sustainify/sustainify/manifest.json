@@ -1,8 +1,12 @@
-
 {
   "manifest_version": 3,
   "name": "Sustainify",
   "version": "1.0",
+  "icons": {
+    "16": "assets/ext-icon.png",
+    "48": "assets/ext-icon.png",
+    "128": "assets/ext-icon.png"
+  },
   "background": {
     "service_worker": "background.js"
   },
