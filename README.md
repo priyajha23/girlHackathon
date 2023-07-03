@@ -30,7 +30,7 @@ The trained model is saved in two formats: pickle (.pkl) and TensorFlow Lite (.t
 
 To use the saved model, load it back into memory using the respective libraries and make predictions on new data.
 
-This project provides a basic framework for refining and deploying a machine learning model to predict emission footprints based on various features. Feel free to modify and extend the code to suit your specific requirements.
+This project provides a basic framework for refining and deploying a machine learning model to predict emission footprints based on various features. 
 
 ---
 
